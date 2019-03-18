@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">FunctionProject</string>
+    <string name="app_name">PictureProcessProject</string>
+
+    <string name="select_image">选择图片</string>
+    <string name="image_folder_title">图片文件夹</string>
+    <string name="select_image_again">重新选择图片</string>
+    <string name="make_up_image">合成图片</string>
+    <string name="image_folder_cancel_image_select">请先取消当前最后一个选中的图片</string>
+    <string name="beyond_max_image_select_number">最多只能选中%d个图片</string>
+    <string name="has_not_selected_image">您还未选中需要合成的图片</string>
+    <string name="generate_long_pic_progress">已合成: %d&#037;&#037;</string>
+    <string name="generate_long_pic">点击体验：合成长图</string>
+    <string name="record_video">点击体验：录屏</string>
+    <string name="recode_video_title">屏幕录制</string>
+    <string name="no_recode_video">无录制视频</string>
+    <string name="recode_video_hint">点击底部按钮开始录制视频</string>
+    <string name="start">开始</string>
+    <string name="init_time">00:00</string>
+    <string name="exit_record_screen">已退出屏幕录制</string>
+    <string name="ready_record_video_hint">录屏弹窗已经展示，正处于准备录屏状态</string>
+    <string name="recording_video_hint">录屏弹窗已经展示，正在录屏</string>
+
 </resources>

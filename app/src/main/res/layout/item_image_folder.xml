@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/folder_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/folder_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:scaleType="fitXY" />
+
+    <FrameLayout
+        android:id="@+id/image_shadow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/colorffffff" />
+
+        <TextView
+            android:id="@+id/folder_image_number"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/shape_select_image_number"
+            android:gravity="center"
+            android:textColor="@color/color0bbe06"
+            android:textSize="@dimen/sp_15" />
+
+
+    </FrameLayout>
+
+</FrameLayout>
