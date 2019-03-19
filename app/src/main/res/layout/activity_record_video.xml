@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/recode_video_title"
+        android:text="@string/record_video_title"
         android:textColor="@color/color222222"
         android:textSize="@dimen/sp_15"
         android:textStyle="bold" />
@@ -30,13 +30,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             android:textColor="@color/color8a8a8a"
-            android:text="@string/no_recode_video"/>
+            android:text="@string/no_record_video"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/color8a8a8a"
-            android:text="@string/recode_video_hint"/>
+            android:text="@string/record_video_hint"/>
 
     </LinearLayout>
 

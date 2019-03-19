@@ -2,10 +2,12 @@ package com.example.i_to_sky.functionproject.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.example.i_to_sky.functionproject.R;
 import com.example.i_to_sky.functionproject.activity.base.BaseActivity;
+import com.example.i_to_sky.functionproject.utils.ToastUtil;
 import com.example.i_to_sky.functionproject.view.recodevideo.ReadyRecordVideoView;
 
 import butterknife.OnClick;
@@ -42,6 +44,11 @@ public class RecordVideoActivity extends BaseActivity {
 
     @OnClick(R.id.record_video)
     public void onRecordVideoClick() {
+        //录屏相关的api在android5.0之后才开放
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            ToastUtil.showToastShort(R.string.cannot_record_video_hint);
+            return;
+        }
         if (mRecordVideoView == null) {
             mRecordVideoView = new ReadyRecordVideoView(this);
         }
