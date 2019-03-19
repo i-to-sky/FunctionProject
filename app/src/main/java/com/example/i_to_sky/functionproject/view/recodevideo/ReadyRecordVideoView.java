@@ -47,6 +47,8 @@ public class ReadyRecordVideoView extends FrameLayout {
     private Handler mHandler = new Handler();
     private int mDuration = -1;
 
+    private OnViewClickListener mOnViewClickListener;
+
     @BindView(R.id.ready_record_video_layout)
     View mReadyLayout;
     @BindView(R.id.record_video_layout)
@@ -77,6 +79,9 @@ public class ReadyRecordVideoView extends FrameLayout {
 
     @OnClick(R.id.record_video_start)
     public void onRecordStartClick() {
+        if (mOnViewClickListener != null) {
+            mOnViewClickListener.onRecordStartClick();
+        }
         mReadyLayout.setVisibility(GONE);
         mRecordingLayout.setVisibility(VISIBLE);
         mViewStatus = RECORDING_VIDEO;
@@ -86,6 +91,9 @@ public class ReadyRecordVideoView extends FrameLayout {
 
     @OnClick(R.id.record_video_close)
     public void onRecordCloseClick() {
+        if (mOnViewClickListener != null) {
+            mOnViewClickListener.onRecordCloseClick();
+        }
         mWindowManager.removeView(this);
         mViewStatus = DEFAULT;
         mDuration = -1;
@@ -94,6 +102,9 @@ public class ReadyRecordVideoView extends FrameLayout {
 
     @OnClick(R.id.record_video_stop)
     public void onRecordStopClick() {
+        if (mOnViewClickListener != null) {
+            mOnViewClickListener.onRecordStopClick();
+        }
         mReadyLayout.setVisibility(VISIBLE);
         mRecordingLayout.setVisibility(GONE);
         mViewStatus = READY_RECORD_VIDEO_AGAING;
@@ -198,6 +209,16 @@ public class ReadyRecordVideoView extends FrameLayout {
         mLayoutParams.x = mLayoutParams.x - (int) slideX;
         mLayoutParams.y = mLayoutParams.y - (int) slideY;
         mWindowManager.updateViewLayout(this, mLayoutParams);
+    }
+
+    public void setOnViewClickListner(OnViewClickListener listener) {
+        mOnViewClickListener = listener;
+    }
+
+    public interface OnViewClickListener{
+        void onRecordStartClick();
+        void onRecordCloseClick();
+        void onRecordStopClick();
     }
 
 }
